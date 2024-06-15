@@ -20,7 +20,7 @@ const userSchema = new mongoose.Schema({
         required: true,
       },
       address: {
-        type: String,
+        type: {},
       },
       role: {
         type: Number,
@@ -44,4 +44,4 @@ userSchema.methods.generateAccessToken = function(){
     )
 }
 
-export const User = mongoose.model ('User', userSchema)
+export const User = mongoose.model ("User", userSchema)
