@@ -9,7 +9,7 @@ import toast from 'react-hot-toast';
 
 const Homepage = () => {
   const navigate = useNavigate();
-  const [cart,setCart] = useCart();
+  const [cart, setCart] = useCart();
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
   const [checked, setChecked] = useState([]);
@@ -61,10 +61,9 @@ const Homepage = () => {
   };
 
   useEffect(() => {
-    if(page===1) return;
+    if (page === 1) return;
     loadMore();
-  }, [page])
-  
+  }, [page]);
 
   // Load more products
   const loadMore = async () => {
@@ -99,7 +98,7 @@ const Homepage = () => {
       });
       setProducts(data?.products);
     } catch (error) {
-      console.log("Hello");
+      console.log(error);
     }
   };
 
@@ -115,14 +114,15 @@ const Homepage = () => {
 
   return (
     <Layout title="All Products - Best offers">
-      <div className="container mx-8 mt-3">
+      <div className="container">
         <div className="flex">
           {/* Filter Column */}
-          <div className="w-1/4 px-4 bg-[#f5f3ee]">
+          <div className="w-1/6 px-4 py-4 bg-[#cddbe0]">
             <h4 className="text-center mb-4">Filter By Category</h4>
             <div className="flex flex-col">
               {categories?.map((c) => (
                 <Checkbox
+                  className='py-1'
                   key={c._id}
                   onChange={(e) => handleFilter(e.target.checked, c._id)}
                 >
@@ -135,7 +135,7 @@ const Homepage = () => {
             <div className="flex flex-col">
               <Radio.Group onChange={(e) => setRadio(e.target.value)}>
                 {Prices?.map((p) => (
-                  <div key={p._id}>
+                  <div key={p._id} className='py-1'>
                     <Radio value={p.array}>{p.name}</Radio>
                   </div>
                 ))}
@@ -153,29 +153,33 @@ const Homepage = () => {
           </div>
 
           {/* Product Display Column */}
-          <div className="w-3/4 px-4 grid grid-cols-3 gap-4">
+          <div className="w-5/6 px-4 grid grid-cols-3 gap-4">
             {products?.map((p) => (
-              <div className="card p-4 border rounded-lg" key={p._id}>
+              <div className="card p-4 border rounded-lg h-full" key={p._id}>
                 <img
                   src={`http://localhost:8080/api/v1/product/product-photo/${p._id}`}
-                  className="card-img-top object-cover h-48"
+                  className="object-cover h-96 py-1 "
                   alt={p.name}
                 />
                 <div className="card-body">
-                  <h5 className="card-title">{p.name}</h5>
+                  <h5 className="font-bold text-xl">{p.name}</h5>
                   <p className="card-text">{p.description.substring(0, 30)}...</p>
-                  <p className="card-text">$ {p.price}</p>
+                  <p className="card-text">Rs. {p.price}</p>
                   <div className="flex justify-between">
-                    <button onClick={() => navigate(`/product/${p.slug}`)} className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg mr-2">
+                    <button
+                      onClick={() => navigate(`/product/${p.slug}`)}
+                      className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg mr-2"
+                    >
                       More Details
                     </button>
-                    <button 
+                    <button
                       onClick={() => {
-                        setCart([...cart,p]);
+                        setCart([...cart, p]);
                         localStorage.setItem('cart', JSON.stringify([...cart, p]))
                         toast.success("Item added to cart");
                       }}
-                      className="bg-gray-500 hover:bg-gray-600 text-white py-2 px-4 rounded-lg">
+                      className="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-lg"
+                    >
                       ADD TO CART
                     </button>
                   </div>

@@ -29,11 +29,12 @@ const SearchInput = () => {
           aria-label="Search"
           value={values.keyword}
           onChange={(e) => setValues({ ...values, keyword: e.target.value })}
-          className="flex-grow p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="flex-grow p-2 border border-orange-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+          style={{ backgroundColor: "white", color: "#1E40AF" }}
         />
         <button
           type="submit"
-          className="bg-pink-500 text-white p-2 rounded-md hover:bg-pink-600 focus:outline-none focus:ring-2 focus:ring-pink-500 -ml-[66px] h-[36px]"
+          className="bg-white text-blue-500 p-2 rounded-md ml-2 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
         >
           Search
         </button>

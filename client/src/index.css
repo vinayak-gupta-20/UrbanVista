@@ -7,3 +7,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.font-heading {
+  font-family: 'Roboto', sans-serif;
+}

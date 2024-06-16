@@ -56,8 +56,8 @@ const Profile = () => {
 
   return (
     <Layout title={"Your Profile"}>
-      <div className="container mx-auto mt-8 p-4">
-        <div className="flex flex-col md:flex-row">
+      <div className="container ">
+        <div className="flex">
           <div className="w-full md:w-1/4 mb-4 md:mb-0">
             <UserPanel />
           </div>
