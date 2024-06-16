@@ -7,14 +7,22 @@ Welcome to **UrbanVista** – your one-stop shop for the best deals and products
 ### 👤 User Authentication
 Securely sign up, log in, and manage your profile with ease. Our robust authentication system ensures your personal information is protected while providing a seamless login experience.
 
+![login](https://github.com/vinayak-gupta-20/UrbanVista/assets/143531375/c9e963db-cf7e-40fd-a401-6a72fe4cf3fc)
+
 ### 🛠️ Admin Dashboard
 Access a comprehensive admin dashboard to efficiently manage products, categories, and orders. With intuitive controls and detailed insights, administrators can keep the store running smoothly.
+
+![adminorder](https://github.com/vinayak-gupta-20/UrbanVista/assets/143531375/4052632a-4f42-498c-9125-7b61a0a4c376)
 
 ### 🛍️ Product Management
 Browse through a wide range of products with detailed descriptions and images. Easily filter products by categories and prices to find exactly what you're looking for.
 
+![homepage](https://github.com/vinayak-gupta-20/UrbanVista/assets/143531375/1f11d7c2-0be0-4681-ab55-e7c23f2834d6)
+
 ### 🛒 Cart Management
 Add products to your shopping cart and review your selections before proceeding to checkout. Our cart system ensures a smooth and user-friendly shopping experience.
+
+![cart](https://github.com/vinayak-gupta-20/UrbanVista/assets/143531375/8c6c7621-4419-41c7-b1fc-003d011daf8c)
 
 ### 📦 Order Management
 View and manage your past orders in a dedicated section. Track order statuses and details to stay informed about your purchases and ensure timely deliveries.
