@@ -8,6 +8,7 @@ import { Select } from "antd";
 const { Option } = Select;
 
 const CreateProduct = () => {
+  const API_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:8080';
   const navigate = useNavigate();
   const [categories, setCategories] = useState([]);
   const [name, setName] = useState("");

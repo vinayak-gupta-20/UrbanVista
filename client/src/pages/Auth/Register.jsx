@@ -4,6 +4,7 @@ import toast from 'react-hot-toast';
 import { Navigate, useNavigate } from 'react-router-dom';
 
 const Register = () => {
+  const API_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:8080';
   const [user, setUser] = useState({
     name: "",
     email: "",

@@ -8,6 +8,7 @@ import { useNavigate, useParams } from "react-router-dom";
 const { Option } = Select;
 
 const UpdateProduct = () => {
+  const API_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:8080';
   const params = useParams();
   const navigate = useNavigate();
   const [categories, setCategories] = useState([]);

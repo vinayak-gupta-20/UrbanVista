@@ -4,6 +4,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const CategoryProduct = () => {
+  const API_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:8080';
   const params = useParams();
   const navigate = useNavigate();
   const [products, setProducts] = useState([]);

@@ -7,6 +7,7 @@ import CategoryForm from "../../components/Form/CategoryForm";
 import { Modal } from "antd";
 
 const CreateCategory = () => {
+  const API_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:8080';
   const [categories, setCategories] = useState([]);
   const [name, setName] = useState("");
   const [visible, setVisible] = useState(false);

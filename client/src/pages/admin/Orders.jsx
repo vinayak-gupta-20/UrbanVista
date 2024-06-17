@@ -9,6 +9,7 @@ const { Option } = Select;
 import AdminPanel from "../../components/layout/AdminPanel";
 
 const Orders = () => {
+  const API_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:8080';
   const [status, setStatus] = useState([
     "Not Process",
     "Processing",

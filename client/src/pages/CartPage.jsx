@@ -6,7 +6,9 @@ import { useNavigate } from "react-router-dom";
 import DropIn from "braintree-web-drop-in-react"
 import axios from "axios";
 
+
 const CartPage = () => {
+  const API_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:8080';
   const [auth] = useAuth();
   const [cart, setCart] = useCart();
   const navigate = useNavigate();
@@ -46,7 +48,7 @@ const CartPage = () => {
   //get payment gateway token
   const getToken = async () => {
     try {
-      const { data } = await axios.get("http://localhost:8080/api/v1/product/braintree/token");
+      const { data } = await axios.get(`${API_URL}/api/v1/product/braintree/token`);
       setClientToken(data?.clientToken);
     } catch (error) {
       console.log(error);

@@ -8,6 +8,7 @@ import { useCart } from "../../context/Cart";
 import { Badge } from "antd";
 
 const Header = () => {
+  const API_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:8080';
   const [auth, setAuth] = useAuth();
   const [cart] = useCart();
   const [isCategoryDropdownOpen, setIsCategoryDropdownOpen] = useState(false);

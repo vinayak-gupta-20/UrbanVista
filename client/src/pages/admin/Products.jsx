@@ -6,7 +6,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 
 const Products = () => {
-
+    const API_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:8080';
     const[products,setProducts] = useState([]);
 
     const getAllProducts = async () => {

@@ -4,7 +4,7 @@ import AdminPanel from '../../components/layout/AdminPanel'
 import { useAuth } from '../../context/Auth'
 
 const AdminDashboard = () => {
-
+    const API_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:8080';
     const[auth] = useAuth();
 
   return (

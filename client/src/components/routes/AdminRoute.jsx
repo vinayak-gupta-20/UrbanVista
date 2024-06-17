@@ -5,6 +5,7 @@ import axios from "axios";
 import Spinner from "./Spinner";
 
 export default function AdminRoute() {
+  const API_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:8080';
   const [ok, setOk] = useState(false);
   const [auth, setAuth] = useAuth();
   let agree=false;

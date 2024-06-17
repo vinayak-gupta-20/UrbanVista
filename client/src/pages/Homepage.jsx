@@ -8,6 +8,7 @@ import { useCart } from '../context/Cart';
 import toast from 'react-hot-toast';
 
 const Homepage = () => {
+  const API_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:8080';
   const navigate = useNavigate();
   const [cart, setCart] = useCart();
   const [products, setProducts] = useState([]);
