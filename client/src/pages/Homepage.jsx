@@ -158,7 +158,7 @@ const Homepage = () => {
             {products?.map((p) => (
               <div className="card p-4 border rounded-lg h-full" key={p._id}>
                 <img
-                  src={`http://localhost:8080/api/v1/product/product-photo/${p._id}`}
+                  src={`${API_URL}/api/v1/product/product-photo/${p._id}`}
                   className="object-cover h-96 py-1 "
                   alt={p.name}
                 />
