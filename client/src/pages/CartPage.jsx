@@ -102,7 +102,7 @@ const CartPage = () => {
               >
                 <div className="w-1/4">
                   <img
-                    src={`http://localhost:8080/api/v1/product/product-photo/${p._id}`}
+                    src={`${API_URL}/api/v1/product/product-photo/${p._id}`}
                     alt={p.name}
                     className="w-full h-full object-cover rounded"
                   />
