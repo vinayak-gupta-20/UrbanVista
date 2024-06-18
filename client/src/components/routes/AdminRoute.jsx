@@ -12,7 +12,7 @@ export default function AdminRoute() {
 
   useEffect(() => {
     const authCheck = async () => {
-        const res = await fetch("http://localhost:8080/api/v1/auth/admin-test", {
+        const res = await fetch(`${API_URL}/api/v1/auth/admin-test`, {
             method: "GET",
             headers: {
               "Authorization": `${auth?.token}`

@@ -3,6 +3,7 @@ import Layout from "../../components/layout/Layout";
 import { useSearch } from "../../context/Search";
 
 const SearchPage = () => {
+  const API_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:8080';
   const [values] = useSearch();
 
   return (
@@ -19,7 +20,7 @@ const SearchPage = () => {
             {values?.results.map((p) => (
               <div key={p._id} className="m-2 w-72 border rounded-lg overflow-hidden shadow-lg">
                 <img
-                  src={`http://localhost:8080/api/v1/product/product-photo/${p._id}`}
+                  src={`${API_URL}/api/v1/product/product-photo/${p._id}`}
                   className="w-full h-48 object-cover"
                   alt={p.name}
                 />

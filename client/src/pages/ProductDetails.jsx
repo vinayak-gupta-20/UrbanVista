@@ -17,7 +17,7 @@ const ProductDetails = () => {
   const getProduct = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:8080/api/v1/product/get-product/${params.slug}`
+        `${API_URL}/api/v1/product/get-product/${params.slug}`
       );
       setProduct(data?.product);
       getSimilarProduct(data?.product._id, data?.product.category._id);
@@ -29,7 +29,7 @@ const ProductDetails = () => {
   const getSimilarProduct = async (pid, cid) => {
     try {
       const { data } = await axios.get(
-        `http://localhost:8080/api/v1/product/related-product/${pid}/${cid}`
+        `${API_URL}/api/v1/product/related-product/${pid}/${cid}`
       );
       setRelatedProducts(data?.products);
     } catch (error) {
@@ -43,7 +43,7 @@ const ProductDetails = () => {
         <div className="flex justify-evenly md:flex-row md:space-x-8 mx-10 ">
           <div className="">
             <img
-              src={`http://localhost:8080/api/v1/product/product-photo/${product._id}`}
+              src={`${API_URL}/api/v1/product/product-photo/${product._id}`}
               alt={product.name}
               className=" w-80 object-cover"
             />
@@ -71,7 +71,7 @@ const ProductDetails = () => {
               {relatedProducts.map((p) => (
                 <div key={p._id} className="m-2 w-72 border rounded-lg overflow-hidden shadow-lg">
                   <img
-                    src={`http://localhost:8080/api/v1/product/product-photo/${p._id}`}
+                    src={`${API_URL}/api/v1/product/product-photo/${p._id}`}
                     alt={p.name}
                     className="w-full h-48 object-cover"
                   />

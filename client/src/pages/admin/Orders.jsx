@@ -23,7 +23,7 @@ const Orders = () => {
 
   const getOrders = async () => {
     try {
-      const { data } = await axios.get("http://localhost:8080/api/v1/auth/all-orders");
+      const { data } = await axios.get(`${API_URL}/api/v1/auth/all-orders`);
       setOrders(data);
     } catch (error) {
       console.log(error);
@@ -36,7 +36,7 @@ const Orders = () => {
 
   const handleChange = async (orderId, value) => {
     try {
-      const { data } = await axios.put(`http://localhost:8080/api/v1/auth/order-status/${orderId}`, {
+      const { data } = await axios.put(`${API_URL}/api/v1/auth/order-status/${orderId}`, {
         status: value,
       });
       getOrders();
@@ -93,7 +93,7 @@ const Orders = () => {
                   <div key={p._id} className="flex mb-4 p-4 border rounded-lg">
                     <div className="w-1/4">
                       <img
-                        src={`http://localhost:8080/api/v1/product/product-photo/${p._id}`}
+                        src={`${API_URL}/api/v1/product/product-photo/${p._id}`}
                         alt={p.name}
                         className="w-full h-24 object-cover"
                       />

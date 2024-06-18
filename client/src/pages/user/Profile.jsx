@@ -6,6 +6,7 @@ import toast from "react-hot-toast";
 import axios from "axios";
 
 const Profile = () => {
+  const API_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:8080';
   //context
   const [auth, setAuth] = useAuth();
   //state
@@ -29,7 +30,7 @@ const Profile = () => {
     e.preventDefault();
     try {
       const { data } = await axios.put(
-        "http://localhost:8080/api/v1/auth/profile",
+        `${API_URL}/api/v1/auth/profile`,
         {
           name,
           email,

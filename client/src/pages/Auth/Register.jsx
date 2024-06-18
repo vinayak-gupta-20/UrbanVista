@@ -29,7 +29,7 @@ const Register = () => {
         console.log(user);
 
         try {
-            const response = await fetch('http://localhost:8080/api/v1/auth/register', {
+            const response = await fetch(`${API_URL}/api/v1/auth/register`, {
 
                 method: "POST",
                 headers: {

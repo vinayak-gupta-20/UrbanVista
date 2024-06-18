@@ -11,7 +11,7 @@ const Products = () => {
 
     const getAllProducts = async () => {
         try {
-            const {data} = await axios.get("http://localhost:8080/api/v1/product/get-product");
+            const {data} = await axios.get(`${API_URL}/api/v1/product/get-product`);
             setProducts(data.products);
             console.log(products.length);
             console.log(products);
@@ -34,7 +34,7 @@ const Products = () => {
                 {products?.map((p) => (
                     <Link key={p._id} to={`/dashboard/admin/product/${p.slug}`} className="flex flex-col h-96    items-center justify-center bg-white p-2 border border-gray-200 rounded-lg shadow-md hover:shadow-lg transition duration-300">
                         <img
-                            src={`http://localhost:8080/api/v1/product/product-photo/${p._id}`}
+                            src={`${API_URL}/api/v1/product/product-photo/${p._id}`}
                             className="h-40 object-cover mb-4"
                             alt={p.name}
                         />
